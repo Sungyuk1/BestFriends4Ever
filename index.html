@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href = "styles.css">
+  </head>
+    <body> 
+        <noscript> You need to enable JavaScript to run this app. </noscript> 
+        <div id="root">
+            <h1 id = "bff">
+                <span id = "one">B</span><span id = "two">e</span><span id = "three">s</span><span id = "four">t</span><span id = "five"> F</span><span id = "six">r</span><span id = "seven">i</span><span id = "eight">e</span><span id = "nine">n</span><span id = "ten">d</span><span id = "eleven">s</span><br>
+                <span id = "twelve"> <a id = "numberfour" href = "http://www.staggeringbeauty.com/" target = "_blank">4</a></span><span id = "thirteen"> E</span><span id = "fourteen">v</span><span id = "fifteen">e</span><span id = "sixteen">r</span><span id = "seventeen">!</span>
+            </h1>
+        <h1 id = "down">ˇ</h1>
+            <div>
+                <div>
+                    <canvas width="1218" height="952" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;"></canvas>
+                </div>
+                <div class="box-wrapper">
+                    <div class="main">
+                        <div class="container">
+                            <div class="innerContainer shadow">
+                                <div class="box">
+                                    <div class="forty image-container-register">
+                                        <h1 id = "friendrecordsearch">Lookup a friendship record!</h1>
+                                        <form>
+                                            <input id = "searchinput" type="text" name="YourSelf" placeholder="Search by address...">
+                                            <button type = "button" id = "Lookup Friendship" class="button-left">Search</button>
+                                        </form>
+                                        <h3 id = "desc">
+                                            Search for your friendship record using the blockchain<br>
+                                            address and your friendship record will appear below!
+                                        </h3>
+                                        <hr>
+                                        <p id = "output"></p>
+                                    </div>
+                                    <div class="sixty form-container">
+                                        <h1 id = "friendrecordenter">Add a friendship record!</h1>
+                                        <form>
+                                            <input id = "yourname" type="text" name="YourSelf" placeholder="Your name..."><input id = "friendname" type="text" name="YourPartner" placeholder="Your friend's name...">
+                                            <button type = "button" class="button-right" id = "create friendship">Solidy Your Friendship</button>
+                                        </form>
+                                        <div class="msg_style">
+                                            <p id = "perfect"></p>
+                                        </div>
+                                        <div>
+                                            <h3 class="notice-container__subtitle">Put your friendship on Ethereum's blockchain forever!</h3>
+                                            <p class="notice-small-text">Enter the names of you and your best friend<br>
+                                                and they will be written to the blockchain forever!
+                                            </p>
+                                            <hr>
+                                            <p id = "blockchainoutput"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footerContent footerTerms">
+                    
+                </div>
+            </div>
+        </div>
+        <script>
+            const bff = document.getElementById("bff");
+            window.onbeforeunload = function () {
+                if (bff)
+                {
+                    bff.style.opacity = 0.0;
+                }
+                window.scrollTo(0, 0);
+            }
+            
+            const down = document.getElementById("down");
+            const perfect = document.getElementById("perfect");
+            const writebutton = document.querySelector(".button-right");
+            const searchbutton = document.querySelector(".button-left");
+            const searchinput = document.getElementById("searchinput");
+            const yourname = document.getElementById("yourname");
+            const friendname = document.getElementById("friendname");
+
+
+            writebutton.onclick = function() {changeText()};
+
+            function changeText()
+            {
+                if(yourname.value != "" && friendname.value != "")
+                {
+                    perfect.textContent = "Great! Now apporve the transaction with MetaMask and you're all set!";
+                }
+                else
+                {
+                    perfect.textContent = "Please enter a name for you and your friend";
+                }
+            }
+
+            down.addEventListener('click', function(){
+                window.scrollBy(0, 1200);
+            })
+            
+        </script>
+        <script src = "javascript.js" type="module"  charset = "UTF-8"></script>
+    </body>
+</html>
